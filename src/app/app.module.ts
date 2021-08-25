@@ -4,15 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopMoversComponent } from './top-movers/top-movers.component';
 import { ReplacePipe } from './pipe/replace.pipe';
+import { TopMoversComponent } from './top-movers/top-movers.component';
+import { UserMoversComponent } from './user-movers/user-movers.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMoversComponent,
-    ReplacePipe
+    ReplacePipe,
+    UserMoversComponent
   ],
   imports: [
     BrowserModule,

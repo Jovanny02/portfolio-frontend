@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopMoversService } from 'src/services/top-movers.service';
+import { TopMoversService } from 'src/services/top-movers/top-movers.service';
 import { MarketTopMoverI } from '../util/MarketTopMover';
 
 @Component({
