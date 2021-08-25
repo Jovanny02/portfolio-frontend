@@ -1,5 +1,7 @@
-<select>
-    <option *ngFor="let user of users; index as i;" [(ngModel)]='selectedUser'>
-        {{user.firstName}} {{user.lastName}} - {{user.id}}
+<select (change)="updateSelected($event)">
+    <option *ngFor="let user of users" [ngValue]="user" >
+        <p>{{user.firstname}} {{user.lastname}} - {{user.id}}</p>
     </option>
 </select>
+
+    <p>{{selectedUser | json}}</p>
