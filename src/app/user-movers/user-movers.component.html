@@ -1,5 +1,16 @@
-<div *ngFor="let mover of userMoverData">
-    <p>{{mover.stockName}}</p>
-    <p>{{mover.percentChange}}</p>
+<h4>Your gainers and losers</h4>
+<div class="movers">
     <hr>
+    <div id="box" *ngFor="let mover of userMoverData">
+        <p>{{mover.stockName.replace("=", "").replace("^","")}}</p>
+        <p
+            [ngClass]="{
+                'positive' : mover.percentChange >= 0,
+                'negative' : mover.percentChange < 0
+            }"
+        >
+            {{mover.percentChange | number : '1.2-2'}}%
+        </p>
+        <!-- <hr> -->
+    </div>
 </div>

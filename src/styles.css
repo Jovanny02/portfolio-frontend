@@ -3,8 +3,30 @@
 html, body { height: 100%; }
 body { 
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #0288d1; 
+    /* background-color: #0288d1;  */
 }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.movers {
+    height: 200px;
+    overflow: auto;
+    
+}
+
+#box {
+    margin: 10px auto;
+    border: 1px solid black;
+    height: 80px;
+    width: 130px;
+    text-align: center;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}

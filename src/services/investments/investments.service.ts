@@ -13,9 +13,11 @@ export class InvestmentsService {
   constructor(private http: HttpClient) { }
 
   url: string = 'http://portfoliomanager-portfoliomanager.namdevops1.conygre.com/';
+  // Todo: update the userId from localStorage.get('userId')
+  userId = '1';
 
   getInvestment(): Observable<InvestmentsI[]> {
-    return this.http.get<InvestmentsI[]>(this.url + 'investments/userid');
+    return this.http.get<InvestmentsI[]>(this.url + 'investments/' + this.userId);
   }
 
 }
