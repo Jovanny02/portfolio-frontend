@@ -1,0 +1,9 @@
+
+<ng-http-loader></ng-http-loader>
+<h1>Value Change: {{change | currency}}</h1>
+<select (change)="selectChangeHandler($event)">
+    <option value="week">Week</option>
+    <option value="month">Month</option>
+    <option value="quarter">Quarter</option>
+    <option value="year">Year</option>
+</select>
