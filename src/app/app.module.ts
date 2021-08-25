@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SelectUserComponent } from './select-user/select-user.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     TopMoversComponent,
     ReplacePipe,
     UserMoversComponent,
-    UserIncomeComponent
+    UserIncomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
