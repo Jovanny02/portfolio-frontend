@@ -13,11 +13,12 @@ export class SelectUserComponent implements OnInit {
     {"firstName": "Jessica", "Phelan": "Nguyen", "id":3}
   ]
 
-  selectedUser = this.users[0].firstName + " " + this.users[0].lastName + " - " + this.users[0].id
+  selectedUser:String = ""
 
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedUser = this.users[0].firstName + " " + this.users[0].lastName + " - " + this.users[0].id;
   }
 
 
