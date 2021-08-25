@@ -1,0 +1,5 @@
+<select>
+    <option *ngFor="let user of users; index as i;" [(ngModel)]='selectedUser'>
+        {{user[i].firstName}} {{user[i].lastName}} - {{user[i].id}}
+    </option>
+</select>
