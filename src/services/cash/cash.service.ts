@@ -13,8 +13,11 @@ export class CashAccountService {
 
   url: string = 'http://portfoliomanager-portfoliomanager.namdevops1.conygre.com/';
 
+  // Todo: update the userId from localStorage.get('userId')
+  userId: string = '1';
+
   getCashAmount(): Observable<CashAccountI[]> {
-    return this.http.get<CashAccountI[]>(this.url + 'cashaccount/id');
+    return this.http.get<CashAccountI[]>(this.url + 'cashaccount/' + this.userId);
   }
 
 }

@@ -1,4 +1,7 @@
-<nav>Portfolio Manager</nav>
+<nav class="navbar">
+    <h2>Portfolio Manager</h2>
+    <app-select-user></app-select-user>
+</nav>
 <div class="container">
     
     <section>
@@ -9,13 +12,21 @@
     <!-- Income and Graph for Week,Month, Quarter, year Change -->
     <div>
         <h1>Income</h1>
+        <hr>
         <app-user-income></app-user-income>
     </div>
 
     <!-- Right side with market and user mover and insights ( optional ) -->
     <div>
         <h1>Market Movers</h1>
-        <!-- <app-top-mover></app-top-mover> -->
+        
+        <div>
+            <app-top-movers></app-top-movers>
+        </div>
+        
+        <div>
+            <app-user-movers></app-user-movers>
+        </div>
     </div>
 
 </div>
