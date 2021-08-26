@@ -1,39 +1,83 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,button {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
 
-<!-- Navigation Bar at top -->
-<div class="topnav">
-  <div class="topnav-right">
-    <a href="#Cash">Cash</a>
-    <a href="#Investments">Investments</a>
-    <a href="#MarketMoverInsights">Market Mover Insights</a>
-  </div>
-  <app-select-user (userChangedEvent)="handleUserChange($event)"></app-select-user>
+<!-- Top container -->
+<div class="w3-bar w3-top w3-blue w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-left">Portfolio Manager</span>
 </div>
 
-<h1>Net Worth Dashboard</h1>
 
 
+<!-- Cash and Investment Left Side View -->
+<nav class="w3-sidebar w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s8 w3-bar"><br>
+     <div class="w3-dropdown-hover">
+      <button class="w3-button">Select User</button>
+      <app-select-user (userChangedEvent)="handleUserChange($event)" ></app-select-user>
 
-<div class="container">
-
-    <section>
+    </div>
+      <br>
+      <br>
+  </div>
+  </div>
+  <hr>
+  <section>
         <!-- LeftSide CashAccount and Investment -->
-        <h1>Account Id</h1>
         <hr/>
         <app-cash-accounts [cashAccounts]='cashAccounts'></app-cash-accounts>
         <hr/>
         <app-investment-accounts [investments]='investmentAccounts'></app-investment-accounts>
 
     </section>
+   
+</nav>
 
-    <!-- Income and Graph for Week,Month, Quarter, year Change -->
-    <div>
-        <h1>Income</h1>
-        <hr>
-        <app-user-income [userId]='userId' ></app-user-income>
+
+
+<!-- PAGE CONTENT HERE-->
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+
+
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Net Worth Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding ">
+    <div class="w3-half">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
+        <div class="w3-right">
+        </div>
+        <div class="w3-clear"></div>
+        <div>
+          <h1>Income</h1>
+          <hr>
+          <app-user-income [userId]='userId' ></app-user-income>
     </div>
-
-    <!-- Right side with market and user mover and insights ( optional ) -->
-    <div>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-laptop w3-xxxlarge"></i></div>
+        <div class="w3-right">
+        </div>
+        <div class="w3-clear"></div>
+        <div>
         <h1>Market Movers</h1>
         
         <div>
@@ -44,24 +88,25 @@
             <app-user-movers [userId]='userId' ></app-user-movers>
         </div>
     </div>
-
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Cash & Investments</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Net Worth Insights</h2>
-    <p>Our graph will go here...</p>
-    <app-stock-select [stocks]="investmentAccounts" 
+
+<!-- graph will go here-->
+<div class="container w3-green">
+<br>
+  <app-stock-select [stocks]="investmentAccounts" 
     (stockChangedEvent)=handleGraphStockChange($event)></app-stock-select>
     <app-stock-chart [stockHistory]="stockHistoryData"></app-stock-chart>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>Market Movers</h2>
-    <p></p>
-  </div>
+<br>
+<br>
 </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>Citi Portfolio Manager</h4>
+    <p>Powered by <a href="https://www.citigroup.com" target="_blank">Citi Investments</a></p>
+  </footer>
