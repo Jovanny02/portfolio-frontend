@@ -17,4 +17,8 @@ export class UserIncomeService {
   getUserIncome(period: string): Observable<number> {
     return this.http.get<number>(this.url + 'investments/' + period + '/' + this.userId);
   }
+
+  getUserNetworth(): Observable<number> {
+    return this.http.get<number>(this.url + 'user/networth/' + this.userId);
+  }
 }

@@ -13,9 +13,9 @@ export class UserMoversService {
   url: string = 'http://portfoliomanager-portfoliomanager.namdevops1.conygre.com/';
 
   // Todo: update the userId from localStorage.get('userId')
-  userId: string = '1';
 
-  getUserMover(): Observable<MarketTopMoverI[]> {
-    return this.http.get<MarketTopMoverI[]>(this.url + 'user/index/' + this.userId);
+
+  getUserMover(userId:number): Observable<MarketTopMoverI[]> {
+    return this.http.get<MarketTopMoverI[]>(this.url + 'user/index/' + userId);
   }
 }

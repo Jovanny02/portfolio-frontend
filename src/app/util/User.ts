@@ -1,4 +1,5 @@
 import { CashAccount } from "./CashAccount"
+import { Investments } from "./Investments"
 
 export interface User {
     id: number,
@@ -6,6 +7,7 @@ export interface User {
     lastname: string,
     username: string,
     password: string,
-    cashAccounts: CashAccount[]
-
+    cashAccounts: CashAccount[],
+    investments: Investments[]
+ 
 }

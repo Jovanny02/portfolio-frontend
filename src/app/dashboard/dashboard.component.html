@@ -1,16 +1,18 @@
+
 <!-- Navigation Bar at top -->
 <div class="topnav">
   <div class="topnav-right">
     <a href="#Cash">Cash</a>
-    <a href="#Investmentst">Investments</a>
+    <a href="#Investments">Investments</a>
     <a href="#MarketMoverInsights">Market Mover Insights</a>
   </div>
+  <app-select-user (userChangedEvent)="handleUserChange($event)"></app-select-user>
 </div>
 
 <h1>Net Worth Dashboard</h1>
 
 
-<nav>Portfolio Manager</nav>
+
 <div class="container">
 
     <section>
@@ -21,13 +23,21 @@
     <!-- Income and Graph for Week,Month, Quarter, year Change -->
     <div>
         <h1>Income</h1>
+        <hr>
         <app-user-income></app-user-income>
     </div>
 
     <!-- Right side with market and user mover and insights ( optional ) -->
     <div>
         <h1>Market Movers</h1>
-        <!-- <app-top-mover></app-top-mover> -->
+        
+        <div>
+            <app-top-movers></app-top-movers>
+        </div>
+        
+        <div>
+            <app-user-movers [userId]='userId' ></app-user-movers>
+        </div>
     </div>
 
 </div>
