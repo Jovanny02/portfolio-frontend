@@ -1,6 +1,7 @@
 <nav class="navbar">
     <h2>Portfolio Manager</h2>
-    <app-select-user></app-select-user>
+    <app-select-user (userChangedEvent)="handleUserChange($event)"></app-select-user>
+
 </nav>
 <div class="container">
     
@@ -25,7 +26,7 @@
         </div>
         
         <div>
-            <app-user-movers></app-user-movers>
+            <app-user-movers [userId]='userId' ></app-user-movers>
         </div>
     </div>
 

@@ -15,32 +15,55 @@ export class SelectUserComponent implements OnInit {
 
   users:User[] = [
     {
-    id: 1,
-    firstname: "hung",
-    lastname: "nguyen",
-    username: "hungnguyen",
-    password: "123456",
-    cashAccounts: [
-    {
-    id: 1,
-    userId: 1,
-    accountName: "Citi",
-    value: 3127.12
-    },
-    {
-    id: 2,
-    userId: 1,
-    accountName: "Well Fargo",
-    value: 1223.12
-    },
-    {
-    id: 3,
-    userId: 1,
-    accountName: "Fidelity Cash",
-    value: 6734.9
-    }
-    ]
-    }
+      id: 1,
+      firstname: "hung",
+      lastname: "nguyen",
+      username: "hungnguyen",
+      password: "123456",
+      cashAccounts: [
+      {
+      id: 1,
+      userId: 1,
+      accountName: "Citi",
+      value: 3127.12
+      },
+      {
+      id: 2,
+      userId: 1,
+      accountName: "Well Fargo",
+      value: 1223.12
+      },
+      {
+      id: 3,
+      userId: 1,
+      accountName: "Fidelity Cash",
+      value: 6734.9
+      }
+      ],
+      investments: [
+      {
+      id: 1,
+      userId: 1,
+      stockName: "TESLA",
+      quantity: 31.25,
+      stockSymbol: "TSLA"
+      },
+      {
+      id: 2,
+      userId: 1,
+      stockName: "Apple",
+      quantity: 20,
+      stockSymbol: "AAPL"
+      },
+      {
+      id: 3,
+      userId: 1,
+      stockName: "Citi",
+      quantity: 200,
+      stockSymbol: "C"
+      }
+      ]
+      }
     ]
 
   selectedUser?:User
