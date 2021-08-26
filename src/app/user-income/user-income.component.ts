@@ -1,5 +1,5 @@
 import { compileInjectable } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input , SimpleChanges, OnChanges} from '@angular/core';
 import { UserIncomeService } from 'src/services/user-income/user-income.service';
 
 @Component({
@@ -7,16 +7,31 @@ import { UserIncomeService } from 'src/services/user-income/user-income.service'
   templateUrl: './user-income.component.html',
   styleUrls: ['./user-income.component.css']
 })
-export class UserIncomeComponent implements OnInit {
+export class UserIncomeComponent implements OnInit, OnChanges {
   constructor(private userIncomeService: UserIncomeService) { }
+
 
   period: string = 'week';
   change: number = 0;
   networth: number = 0;
+  @Input() userId:number = 0
 
   ngOnInit(): void {
-    this.updateChange();
-    this.userIncomeService.getUserNetworth()
+   // this.updateBasedOnNewUser()
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateBasedOnNewUser()
+  }
+
+  updateBasedOnNewUser(){
+    this.updateUserIncome();
+    this.updateNetWorth();
+  }
+
+
+  updateNetWorth() {
+    this.userIncomeService.getUserNetworth(this.userId)
     .subscribe((data) => {
       console.log(data);
       this.networth = data;
@@ -24,8 +39,8 @@ export class UserIncomeComponent implements OnInit {
     });
   }
 
-  updateChange() {
-    this.userIncomeService.getUserIncome(this.period)
+  updateUserIncome() {
+    this.userIncomeService.getUserIncome(this.period, this.userId)
     .subscribe((data) => {
       this.change = data;
     });
@@ -33,6 +48,6 @@ export class UserIncomeComponent implements OnInit {
 
   selectChangeHandler (event: any) {
     this.period = event.target.value;
-    this.updateChange();
+    this.updateUserIncome();
   }
 }

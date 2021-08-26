@@ -18,13 +18,18 @@
     <section>
         <!-- LeftSide CashAccount and Investment -->
         <h1>Account Id</h1>
+        <hr/>
+        <app-cash-accounts [cashAccounts]='cashAccounts'></app-cash-accounts>
+        <hr/>
+        <app-investment-accounts [investments]='investmentAccounts'></app-investment-accounts>
+
     </section>
 
     <!-- Income and Graph for Week,Month, Quarter, year Change -->
     <div>
         <h1>Income</h1>
         <hr>
-        <app-user-income></app-user-income>
+        <app-user-income [userId]='userId' ></app-user-income>
     </div>
 
     <!-- Right side with market and user mover and insights ( optional ) -->

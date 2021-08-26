@@ -16,6 +16,8 @@ export class UserMoversService {
 
 
   getUserMover(userId:number): Observable<MarketTopMoverI[]> {
+    console.log("get user movers with id " + userId)
+
     return this.http.get<MarketTopMoverI[]>(this.url + 'user/index/' + userId);
   }
 }
