@@ -71,14 +71,21 @@ export class SelectUserComponent implements OnInit {
   constructor(private getUsersService:GetUsersService) { }
 
   ngOnInit(): void {
+
+    //async
     this.getUsersService.getAllUsers().subscribe((data) => {
       this.users = data  
+      this.selectedUser = this.users[0]
+      // console.log("emitted change event ")
+      // console.log(JSON.stringify(this.users))
+      // console.log("selected user is " + JSON.stringify(this.selectedUser))
+
+      this.userChangedEvent.emit(this.selectedUser)
     },
     (err) =>{
       console.log(err)
     })
-    this.selectedUser = this.users[0]
-    this.userChangedEvent.emit(this.selectedUser)
+
   }
 
   updateSelected(selected:any){

@@ -13,6 +13,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SelectUserComponent } from './select-user/select-user.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CashAccountsComponent } from './cash-accounts/cash-accounts.component';
+import { InvestmentAccountsComponent } from './investment-accounts/investment-accounts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReplacePipe,
     UserMoversComponent,
     UserIncomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    CashAccountsComponent,
+    InvestmentAccountsComponent
   ],
   imports: [
     BrowserModule,

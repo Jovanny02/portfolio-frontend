@@ -12,13 +12,15 @@ export class UserIncomeService {
   constructor(private http: HttpClient) { }
 
   // Todo: update the userId from localStorage.get('userId')
-  userId: string = '1';
 
-  getUserIncome(period: string): Observable<number> {
-    return this.http.get<number>(this.url + 'investments/' + period + '/' + this.userId);
+
+  getUserIncome(period: string, userId: number): Observable<number> {
+    console.log("get income with id " + userId)
+    return this.http.get<number>(this.url + 'investments/' + period + '/' + userId);
   }
 
-  getUserNetworth(): Observable<number> {
-    return this.http.get<number>(this.url + 'user/networth/' + this.userId);
+  getUserNetworth(userId: number): Observable<number> {
+    console.log("get net worth with id " + userId)
+    return this.http.get<number>(this.url + 'user/networth/' + userId);
   }
 }
