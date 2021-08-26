@@ -1,0 +1,6 @@
+<select (change)="updateSelected($event)">
+    <option *ngFor="let stock of stocks" [ngValue]="stock" >
+        <p>{{stock.stockSymbol.replace("^","").replace("=","")}}</p>
+    </option>
+</select>
+

@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CashAccountsComponent } from './cash-accounts/cash-accounts.component';
 import { InvestmentAccountsComponent } from './investment-accounts/investment-accounts.component';
+import { ChartsModule } from 'ng2-charts';
+import { StockChartComponent } from './stock-chart/stock-chart.component';
+import { StockSelectComponent } from './stock-select/stock-select.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { InvestmentAccountsComponent } from './investment-accounts/investment-ac
     UserIncomeComponent,
     DashboardComponent,
     CashAccountsComponent,
-    InvestmentAccountsComponent
+    InvestmentAccountsComponent,
+    StockChartComponent,
+    StockSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { InvestmentAccountsComponent } from './investment-accounts/investment-ac
     HttpClientModule,
     BrowserAnimationsModule,
     NgHttpLoaderModule.forRoot(),
+    ChartsModule
 
   ],
   providers: [],

@@ -56,6 +56,9 @@
   <div class="column" style="background-color:#bbb;">
     <h2>Net Worth Insights</h2>
     <p>Our graph will go here...</p>
+    <app-stock-select [stocks]="investmentAccounts" 
+    (stockChangedEvent)=handleGraphStockChange($event)></app-stock-select>
+    <app-stock-chart [stockHistory]="stockHistoryData"></app-stock-chart>
   </div>
   <div class="column" style="background-color:#ccc;">
     <h2>Market Movers</h2>
