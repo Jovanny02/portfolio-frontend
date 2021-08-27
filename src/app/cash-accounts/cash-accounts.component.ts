@@ -14,6 +14,9 @@ export class CashAccountsComponent implements OnInit, OnChanges {
 
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
+    if(this.cashAccounts == undefined || this.cashAccounts == null)
+      return
+
     this.totalValue = 0;
     for(let i=0; i <this.cashAccounts.length;i++){
       this.totalValue += this.cashAccounts[i].value

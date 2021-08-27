@@ -21,7 +21,8 @@ export class UserIncomeComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.updateBasedOnNewUser()
+    if(this.userId != undefined)
+      this.updateBasedOnNewUser()
   }
 
   updateBasedOnNewUser(){

@@ -1,6 +1,6 @@
-<h3>Cash Account:   {{totalValue}}</h3>
+<h3>Cash Account:   {{totalValue | currency}}</h3>
 <hr/>
 <div *ngFor="let account of cashAccounts">
-    <p>{{account.accountName}}:{{account.value | currency}}</p>
+    <p>{{account.accountName}}: {{account.value | currency}}</p>
     <!-- <hr> -->
 </div>

@@ -17,7 +17,8 @@ export class UserMoversComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     //console.log("changes occured " + JSON.stringify(changes)); // here you will get the data from parent once the input param is change
-    this.updateMoverData()
+    if(this.userId != undefined)
+      this.updateMoverData()
   }
 
   ngOnInit(): void {
